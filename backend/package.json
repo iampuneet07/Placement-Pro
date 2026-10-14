@@ -1,0 +1,28 @@
+{
+  "name": "placementpro-backend",
+  "version": "1.0.0",
+  "description": "Backend API for PlacementPro - Student Placement Preparation & Tracking Portal",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "seed": "node scripts/seed.js"
+  },
+  "keywords": [
+    "placement",
+    "dsa",
+    "interview-prep",
+    "express",
+    "mongodb",
+    "mongoose"
+  ],
+  "author": "PlacementPro Team",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.0",
+    "morgan": "^1.10.0"
+  }
+}
