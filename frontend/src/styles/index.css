@@ -361,6 +361,17 @@ code, pre {
   border-color: var(--danger-border);
 }
 
+.db-status-pill.demo {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-color: #bfdbfe;
+}
+
+.db-status-pill.demo .status-dot {
+  background: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+
 .status-dot {
   width: 8px;
   height: 8px;

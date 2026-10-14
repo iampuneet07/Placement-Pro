@@ -26,17 +26,25 @@ export default function Navbar({
       <div className="navbar-right">
         {/* MongoDB Compass Connection Status Pill */}
         <div
-          className={`db-status-pill ${!isDbConnected ? 'disconnected' : ''}`}
+          className={`db-status-pill ${
+            isDbConnected ? '' : dbStatus?.mode === 'demo' ? 'demo' : 'disconnected'
+          }`}
           title={
             isDbConnected
               ? `Connected to MongoDB database: ${dbStatus?.name} (${dbStatus?.host}:${dbStatus?.port})`
+              : dbStatus?.mode === 'demo'
+              ? 'Running in Demo & Offline Mode with local browser storage. Connect backend anytime for live MongoDB persistence.'
               : 'MongoDB is disconnected! Ensure local MongoDB service or Atlas is active.'
           }
         >
           <span className="status-dot"></span>
           <Database size={14} />
           <span>
-            {isDbConnected ? 'MongoDB Connected' : 'MongoDB Offline'}
+            {isDbConnected
+              ? 'MongoDB Connected'
+              : dbStatus?.mode === 'demo'
+              ? 'Demo Mode (Offline Active)'
+              : 'MongoDB Offline'}
           </span>
         </div>
 

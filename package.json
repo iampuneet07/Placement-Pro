@@ -1,0 +1,18 @@
+{
+  "name": "placement-pro",
+  "version": "1.0.0",
+  "description": "PlacementPro - Student Placement Preparation & Tracking Portal",
+  "scripts": {
+    "start": "node backend/server.js",
+    "seed": "node backend/scripts/seed.js",
+    "build": "npm --prefix frontend run build",
+    "install:all": "npm install && npm --prefix backend install && npm --prefix frontend install"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.0",
+    "morgan": "^1.10.0"
+  }
+}

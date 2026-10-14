@@ -97,14 +97,19 @@ app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
-const server = app.listen(PORT, () => {
-  console.log(`🚀 PlacementPro API Server running on http://localhost:${PORT}`);
-  console.log(`📋 Health Check: http://localhost:${PORT}/api/health`);
-});
+let server;
+if (!process.env.VERCEL && process.env.NODE_ENV !== 'test') {
+  server = app.listen(PORT, () => {
+    console.log(`🚀 PlacementPro API Server running on http://localhost:${PORT}`);
+    console.log(`📋 Health Check: http://localhost:${PORT}/api/health`);
+  });
+}
 
 // Handle unhandled promise rejections
 process.on('unhandledRejection', (err) => {
   console.error(`Unhandled Rejection Error: ${err.message}`);
 });
 
-module.exports = { app, server };
+module.exports = app;
+module.exports.app = app;
+module.exports.server = server;
